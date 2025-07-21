@@ -330,10 +330,10 @@ func main() {
 	// 加入 prefix 支援
 	prefix := os.Getenv("PREFIX")
 	if prefix == "" {
-		prefix = "/ohttp"
+		prefix = ""
 	}
 	// 確保 prefix 開頭有 / 但結尾不能有 /
-	if !strings.HasPrefix(prefix, "/") {
+	if prefix != "" && !strings.HasPrefix(prefix, "/") {
 		prefix = "/" + prefix
 	}
 	if len(prefix) > 1 && strings.HasSuffix(prefix, "/") {
